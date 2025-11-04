@@ -16,13 +16,39 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
+
+/* --- Fond d'écran global --- */
+body {
+  
+
+  
+}
+
+/* --- Optionnel : effet “verre dépoli” --- */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.3); /* filtre doux */
+  backdrop-filter: blur(4px);        /* floute légèrement le fond */
+  z-index: -1;
+}
+
 body{
   margin:0;
   font-family:"Poppins",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  background:linear-gradient(180deg,#fbf7f2 0%, #f7f3ef 100%);
-  color:var(--text);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
+  color: #333;
+  scroll-behavior: smooth;
+  /* ✅ Image de fond */
+  background-image: url("images/fond-ecran.jpg");
+  background-size: cover;           /* couvre toute la zone */
+  background-position: center top;  /* centre la partie la plus intéressante */
+  background-repeat: no-repeat;
+  background-attachment: fixed;     /* effet de parallaxe fluide */
+
+  /* 🌤️ Lisibilité du texte sur image */
+  background-color: rgba(255, 255, 255, 0.6);
+  background-blend-mode: lighten;   /* adoucit les zones sombres */
 }
 
 /* Header */
@@ -175,3 +201,4 @@ body{
 }
 .visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
 .site-footer{text-align:center;padding:24px;color:var(--muted);font-size:.95rem}
+
