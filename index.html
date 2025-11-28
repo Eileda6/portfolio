@@ -1,187 +1,105 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portfolio – Adélie Brunel (Mode Aventure)</title>
-
-  <!-- Font (optionnel) -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio – Adélie Brunel</title>
   <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="header-inner">
-      <h1 class="brand">Adélie Brunel</h1>
-      <nav aria-label="Navigation principale">
-        <ul class="top-links">
-          <li><a href="#map">Carte</a></li>
-          <li><a href="#projects">Projets</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">Adélie Brunel — UX/UI Designer</h1>
+      <nav>
+        <a href="#projects">Projets</a>
+        <a href="#process">Méthode UX</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main id="map" class="map-wrap">
-    <h2 class="visually-hidden">Carte Portfolio - Mode Aventure</h2>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <h2>Designer UX/UI en dernière année à l’ENSIM</h2>
+        <p>Je conçois des interfaces centrées utilisateur : maquettes Figma Low-Fi / Hi-Fi, design system, prototypage interactif et tests utilisateurs.</p>
+        <a class="btn" href="#projects">Voir mes projets</a>
+      </div>
+      <img src="images/dessin-principal.png" alt="Adélie illustration" class="hero-img">
+    </div>
+  </section>
 
-    <section class="map-legend">
-      <p>Mode Aventure 🎮 — Passe la souris ou clique sur un niveau pour l'ouvrir</p>
-    </section>
+  <!-- SECTION PROJETS -->
+  <section id="projects" class="projects-section">
+    <div class="container">
+      <h2>Projets UX/UI</h2>
 
-    <div class="map-vertical" role="list">
-      <!-- LEVEL 1 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="1" aria-labelledby="lvl1-title" data-short="À propos — Adélie, UX/UI, étudiante.">
-        <div class="level-bubble pastel-rose">🌸</div>
-        <div class="level-label" id="lvl1-title">Niveau 1 — À propos</div>
-        <div class="connector"></div>
-        <div class="panel" id="panel-1" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner">
-            <div class="panel-left">
-              <img src="images/dessin-principal.png" alt="Dessin d'Adélie" class="profile-drawing">
-            </div>
-            <div class="panel-right">
-              <h3>À propos de moi</h3>
-              <p>Bonjour, je suis <strong>Adélie Brunel</strong> 👋, étudiante en école d’ingénieur informatique et designer UX/UI.
-                J’aime allier <strong>créativité</strong> et <strong>technologie</strong> pour concevoir des expériences accessibles et humaines.</p>
-              <p>Objectif : postuler à des stages en design UX/UI — j'apporte des maquettes Figma (low-fi & hi-fi), prototypes et implémentations front.</p>
+      <div class="carousel">
+        <button class="carousel-btn" id="prevBtn">◀</button>
 
-              <div class="panel-actions">
-                <a class="btn" href="#contact">Me contacter</a>
-                <a class="btn ghost" href="#gallery">Voir ma galerie</a>
-              </div>
-            </div>
-          </div>
+        <div class="carousel-track">
+
+          <!-- PROJECT 1 -->
+          <article class="card">
+            <img src="images/schemaflash.jpg" alt="SchemaFlash" />
+            <h3>SchemaFlash — Application mobile</h3>
+            <p>Création de fiches interactives. Maquettes Low-Fi & Hi-Fi, design system, prototypage Figma, parcours utilisateurs.</p>
+            <a href="#" class="link">Voir le projet →</a>
+          </article>
+
+          <!-- PROJECT 2 -->
+          <article class="card">
+            <img src="images/ecosort.jpg" alt="EcoSort" />
+            <h3>EcoSort — Tri intelligent des déchets</h3>
+            <p>Recherche UX, parcours utilisateurs, design system, MVP1 → MVP2, prototypes interactifs sur Figma.</p>
+            <a href="#" class="link">Voir le projet →</a>
+          </article>
+
+          <!-- PROJECT 3 -->
+          <article class="card">
+            <img src="images/solas.jpg" alt="SOLAS" />
+            <h3>SOLAS – Exploration solaire en VR</h3>
+            <p>Conception UX immersive, ergonomie VR, notifs utilisateur, prototypes Unity.</p>
+            <a href="#" class="link">Voir le projet →</a>
+          </article>
+
         </div>
-      </article>
 
-      <!-- LEVEL 2 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="2" aria-labelledby="lvl2-title" data-short="Projets : SOLAS (VR), SchemaFlash, Memory.">
-        <div class="level-bubble pastel-blue">💼</div>
-        <div class="level-label" id="lvl2-title">Niveau 2 — Projets</div>
-        <div class="connector"></div>
-        <div class="panel" id="panel-2" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner panel-projects">
-            <h3>Mes projets principaux</h3>
+        <button class="carousel-btn" id="nextBtn">▶</button>
+      </div>
+    </div>
+  </section>
 
-            <div class="proj">
-              <img src="images/solas.jpg" alt="SOLAS VR" />
-              <div class="proj-text">
-                <h4>🪐 SOLAS — Explorer le système solaire en VR</h4>
-                <p>Jeu éducatif immersif développé sous <strong>Unity (C#)</strong>. Exploration des planètes + narration pédagogique.</p>
-                <p class="meta">Compétences : Unity, VR, interfaces immersives, gestion de scènes 3D.</p>
-                <a class="small-link" href="https://github.com/Lecureur-Arthur/SOLAS" target="_blank" rel="noopener">Voir sur GitHub</a>
-              </div>
-            </div>
+  <!-- PROCESSUS UX -->
+  <section id="process" class="process-section">
+    <div class="container">
+      <h2>Mon processus UX</h2>
+      <ol>
+        <li><strong>Recherche :</strong> interviews, benchmark, analyse besoins</li>
+        <li><strong>Structure :</strong> user flows, wireframes Low-Fi</li>
+        <li><strong>Création :</strong> maquettes Hi-Fi & design system</li>
+        <li><strong>Tests :</strong> tests utilisateurs, itérations MVP</li>
+        <li><strong>Handoff :</strong> export dev, documentation</li>
+      </ol>
+    </div>
+  </section>
 
-            <div class="proj">
-              <img src="images/schemaflash.jpg" alt="SchemaFlash app" />
-              <div class="proj-text">
-                <h4>📱 SchemaFlash — Fiches interactives</h4>
-                <p>Application Android en <strong>Kotlin + Jetpack Compose</strong>. Maquettes Low-Fi & Hi-Fi créées sur <strong>Figma</strong>.</p>
-                <p class="meta">Compétences : Kotlin, Jetpack Compose, UX design, prototypage Figma.</p>
-                <a class="small-link" href="https://github.com/Eileda6/Schema_Flash_Adelie_Brunel" target="_blank" rel="noopener">Voir sur GitHub</a>
-              </div>
-            </div>
+  <!-- CONTACT -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2>Me contacter</h2>
+      <p>📧 <a href="mailto:bruneladelie@gmail.com">bruneladelie@gmail.com</a></p>
+      <p>💼 <a href="https://www.linkedin.com/in/adélie-brunel" target="_blank">LinkedIn</a></p>
+      <p>🐙 <a href="https://github.com/Eileda6" target="_blank">GitHub</a></p>
+      <a class="btn" href="files/CV-Adelie-Brunel.pdf" download>📄 Télécharger mon CV</a>
+    </div>
+  </section>
 
-            <div class="proj">
-              <img src="images/memory.jpg" alt="Jeu de Memory" />
-              <div class="proj-text">
-                <h4>🧠 Jeu de Memory</h4>
-                <p>Mini-jeu en <strong>HTML/CSS/JS</strong> packagé avec un <strong>Dockerfile</strong>. But : retrouver les paires avec le moins de coups.</p>
-                <p class="meta">Compétences : JavaScript, animations, containerisation (Docker).</p>
-                <a class="small-link" href="https://github.com/Eileda6/TP_Projet_DevOps" target="_blank" rel="noopener">Voir sur GitHub</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </article>
-
-      <!-- LEVEL 3 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="3" aria-labelledby="lvl3-title" data-short="Processus UX — recherche, wireframes, tests.">
-        <div class="level-bubble pastel-pink">🧭</div>
-        <div class="level-label" id="lvl3-title">Niveau 3 — Processus UX</div>
-        <div class="connector"></div>
-        <div class="panel" id="panel-3" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner">
-            <h3>Mon processus de design UX</h3>
-            <ol class="process-list">
-              <li><strong>Recherche</strong> — interviews, benchmark, collecte de besoins.</li>
-              <li><strong>Low-Fi</strong> — wireframes papier/numériques pour itération rapide.</li>
-              <li><strong>Hi-Fi</strong> — maquettes Figma détaillées & prototypage.</li>
-              <li><strong>Tests</strong> — tests utilisateurs, retours & itérations.</li>
-              <li><strong>Implémentation</strong> — collaboration dev, handoff, documentation.</li>
-            </ol>
-            <p class="meta">Outils : Figma, Notion, Miro, Google Forms, Android Studio.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- LEVEL 4 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="4" aria-labelledby="lvl4-title" data-short="Galerie UI — maquettes Figma à venir.">
-        <div class="level-bubble pastel-green">🎨</div>
-        <div class="level-label" id="lvl4-title">Niveau 4 — Galerie UI</div>
-        <div class="connector"></div>
-        <div class="panel" id="panel-4" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner">
-            <h3>Galerie UI</h3>
-            <p>Extraits de maquettes Figma (Low-Fi & Hi-Fi) et prototypes. Ici tu pourras importer des images/iframes Figma.</p>
-            <p class="meta">À ajouter : captures Figma, liens vers prototypes interactifs.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- LEVEL 5 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="5" aria-labelledby="lvl5-title" data-short="Compétences & Outils.">
-        <div class="level-bubble pastel-yellow">💡</div>
-        <div class="level-label" id="lvl5-title">Niveau 5 — Compétences</div>
-        <div class="connector"></div>
-        <div class="panel" id="panel-5" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner">
-            <h3>Compétences & Outils</h3>
-            <ul class="skills-list">
-              <li>Design : Figma, wireframing, prototypage, heuristics</li>
-              <li>Front : HTML, CSS, JavaScript</li>
-              <li>Mobile : Kotlin, Jetpack Compose (Android)</li>
-              <li>Jeux/VR : Unity (C#)</li>
-              <li>Outils : Git/GitHub, Docker, Notion</li>
-            </ul>
-            <p class="meta">Soft skills : communication, travail en équipe, empathie utilisateur.</p>
-          </div>
-        </div>
-      </article>
-
-      <!-- LEVEL 6 -->
-      <article class="map-level" role="listitem" tabindex="0" data-level="6" aria-labelledby="lvl6-title" data-short="Contact — mail, LinkedIn, GitHub.">
-        <div class="level-bubble pastel-mint">📫</div>
-        <div class="level-label" id="lvl6-title">Niveau 6 — Contact</div>
-        <div class="panel" id="panel-6" aria-hidden="true">
-          <button class="close-btn" aria-label="Fermer">✕</button>
-          <div class="panel-inner">
-            <h3>Contact</h3>
-            <p>📧 <a href="mailto:bruneladelie@gmail.com">bruneladelie@gmail.com</a></p>
-            <p>💼 <a href="https://www.linkedin.com/in/ad%C3%A9lie-brunel-89680329a" target="_blank" rel="noopener">LinkedIn</a></p>
-            <p>🐙 <a href="https://github.com/Eileda6" target="_blank" rel="noopener">GitHub</a></p>
-            <div class="panel-actions">
-              <a class="btn" href="files/CV-Adelie-Brunel.pdf" download>Télécharger mon CV</a>
-            </div>
-          </div>
-        </div>
-      </article>
-
-    </div> <!-- end map-vertical -->
-  </main>
-
-  <footer class="site-footer">
-    <p>© 2025 Adélie Brunel — Portfolio Mode Aventure</p>
+  <footer class="footer">
+    <p>© 2025 Adélie Brunel — Portfolio UX/UI</p>
   </footer>
 
   <script src="script.js"></script>

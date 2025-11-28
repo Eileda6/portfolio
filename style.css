@@ -1,204 +1,163 @@
-/* ========== Variables & Global ========== */
-:root{
-  --bg:#fbf7f2;
-  --text:#2b2b2b;
-  --muted:#6b6b6b;
-  --rose:#fdebf0;
-  --blue:#e8f3fd;
-  --pink:#fff0f6;
-  --green:#e9f7ec;
-  --yellow:#fff8e6;
-  --mint:#e6fbf7;
-  --accent:#6c63ff;
-  --glass: rgba(255,255,255,0.85);
-  --radius:18px;
+/* GENERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
-
-/* --- Fond d'écran global --- */
 body {
-  
-
-  
+  font-family: "Poppins", sans-serif;
+  color: #1c1c1c;
+  background: #fafafa;
+  line-height: 1.6;
 }
 
-/* --- Optionnel : effet “verre dépoli” --- */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(255,255,255,0.3); /* filtre doux */
-  backdrop-filter: blur(4px);        /* floute légèrement le fond */
-  z-index: -1;
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
-body{
-  margin:0;
-  font-family:"Poppins",system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;
-  color: #333;
+/* HEADER */
+.header {
+  background: white;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header .logo {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+.header nav a:hover {
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  padding: 60px 0;
+  background: #fff;
+}
+
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-img {
+  width: 250px;
+  border-radius: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: #000;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+.btn:hover {
+  background: #333;
+}
+
+/* PROJECTS */
+.projects-section {
+  padding: 80px 0;
+}
+
+.projects-section h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+/* CAROUSEL */
+.carousel {
+  display: flex;
+  align-items: center;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+.carousel-btn:hover {
+  opacity: 1;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
   scroll-behavior: smooth;
-  /* ✅ Image de fond */
-  background-image: url("images/fond-ecran.jpg");
-  background-size: cover;           /* couvre toute la zone */
-  background-position: center top;  /* centre la partie la plus intéressante */
-  background-repeat: no-repeat;
-  background-attachment: fixed;     /* effet de parallaxe fluide */
-
-  /* 🌤️ Lisibilité du texte sur image */
-  background-color: rgba(255, 255, 255, 0.6);
-  background-blend-mode: lighten;   /* adoucit les zones sombres */
+  width: 100%;
 }
 
-/* Header */
-.site-header{
-  position:sticky;top:0;z-index:50;
-  background:linear-gradient(90deg,#fff 0%, #fff);
-  border-bottom:1px solid rgba(0,0,0,0.04);
-  box-shadow:0 6px 20px rgba(0,0,0,0.04);
-}
-.header-inner{
-  max-width:1100px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;justify-content:space-between;
-}
-.brand{margin:0;font-size:1.1rem;font-weight:700;color:var(--accent)}
-.top-links{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
-.top-links a{color:var(--muted);text-decoration:none;font-weight:600}
-.top-links a:hover{color:var(--accent)}
-
-/* Map container */
-.map-wrap{max-width:1100px;margin:28px auto;padding:20px}
-.map-legend{text-align:center;color:var(--muted);margin-bottom:10px}
-
-/* Vertical map */
-.map-vertical{
-  display:flex;
-  flex-direction:column;
-  align-items:flex-start;
-  gap:32px;
-  padding:20px;
-  position:relative;
+.card {
+  min-width: 300px;
+  background: white;
+  border-radius: 12px;
+  padding: 15px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
 }
 
-/* Each level */
-.map-level{
-  width:100%;
-  display:grid;
-  grid-template-columns:120px 1fr;
-  align-items:center;
-  gap:18px;
-  position:relative;
-  outline:none;
-}
-.map-level:focus .level-bubble,
-.map-level:hover .level-bubble{
-  transform:translateX(-6px) scale(1.06);
-  box-shadow:0 12px 30px rgba(0,0,0,0.12);
+.card img {
+  width: 100%;
+  border-radius: 10px;
 }
 
-/* bubble + label */
-.level-bubble{
-  width:96px;height:96px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;
-  box-shadow:0 8px 24px rgba(0,0,0,0.08);
-  transition:transform .28s ease, box-shadow .28s ease, background .28s;
-  flex-shrink:0;
-}
-.level-label{font-weight:700;color:var(--text)}
-
-/* pastel colors */
-.pastel-rose{background:linear-gradient(180deg,var(--rose),#ffeaf3)}
-.pastel-blue{background:linear-gradient(180deg,var(--blue),#ebf6ff)}
-.pastel-pink{background:linear-gradient(180deg,var(--pink),#ffeef8)}
-.pastel-green{background:linear-gradient(180deg,var(--green),#f0fbf2)}
-.pastel-yellow{background:linear-gradient(180deg,var(--yellow),#fff9e0)}
-.pastel-mint{background:linear-gradient(180deg,var(--mint),#f0fff9)}
-
-/* connector line between bubble and panel */
-.connector{
-  height:8px;
-  background:linear-gradient(90deg,var(--accent),transparent);
-  border-radius:8px;
-  margin-left:6px;
-  width:40%;
-  justify-self:start;
-  align-self:center;
-  opacity:0.9;
+.card .link {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
 }
 
-/* Panel (hidden by default) */
-.panel{
-  grid-column: 2 / span 1;
-  margin-left:8px;
-  background:var(--glass);
-  border-radius:var(--radius);
-  padding:18px;
-  box-shadow:0 20px 50px rgba(16,16,16,0.08);
-  transform:translateY(12px) scale(.98);
-  opacity:0;
-  max-height:0;
-  overflow:hidden;
-  transition:all .36s cubic-bezier(.2,.9,.22,1);
-  border:1px solid rgba(0,0,0,0.04);
-  position:relative;
+/* PROCESS */
+.process-section {
+  background: #fff;
+  padding: 60px 0;
 }
 
-/* when panel open via JS we add .open */
-.panel.open{
-  opacity:1;
-  transform:translateY(0) scale(1);
-  max-height:1200px; /* large */
-  padding:22px;
+.process-section ol {
+  padding-left: 20px;
+  margin-top: 15px;
 }
 
-/* close button */
-.close-btn{
-  position:absolute;right:12px;top:12px;border:0;background:transparent;font-size:1rem;cursor:pointer;
+/* CONTACT */
+.contact-section {
+  padding: 60px 0;
+  text-align: center;
 }
 
-/* panel inner layout */
-.panel-inner{
-  display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;
+.contact-section a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
 }
-.panel-left img.profile-drawing{
-  width:220px;border-radius:12px;box-shadow:0 12px 30px rgba(0,0,0,0.12);
+
+/* FOOTER */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
+  color: #666;
 }
-.panel-right{flex:1;min-width:220px}
-.panel-right h3{margin-top:0;color:var(--accent)}
-.panel-right p{color:var(--muted);line-height:1.5}
-
-/* Projects list inside panel */
-.panel-projects .proj{display:flex;gap:14px;align-items:flex-start;margin:14px 0;padding:12px;border-radius:12px;background:#fff}
-.panel-projects .proj img{width:120px;height:80px;object-fit:cover;border-radius:8px}
-.proj-text h4{margin:0 0 6px 0}
-.meta{font-size:.9rem;color:#666;margin-top:6px}
-.small-link{display:inline-block;margin-top:8px;color:var(--accent);text-decoration:none;font-weight:600}
-
-/* actions/buttons */
-.btn{display:inline-block;background:linear-gradient(90deg,var(--accent),#b9a8ff);color:white;padding:8px 14px;border-radius:12px;text-decoration:none;font-weight:700}
-.btn.ghost{background:transparent;color:var(--accent);border:1px solid rgba(108,99,255,0.12)}
-.panel-actions{margin-top:12px;display:flex;gap:10px}
-
-/* Process list & skills */
-.process-list{padding-left:18px}
-.skills-list{padding-left:18px}
-
-/* Responsive */
-@media (max-width:900px){
-  .map-level{grid-template-columns:88px 1fr}
-  .level-bubble{width:76px;height:76px;font-size:1.6rem}
-  .panel-inner{flex-direction:column}
-  .panel-left img.profile-drawing{width:100%;max-width:360px}
-}
-@media (max-width:600px){
-  .map-vertical{gap:22px;padding:12px}
-  .connector{display:none}
-  .map-level{grid-template-columns:1fr}
-  .level-bubble{justify-self:center;margin:0 auto}
-  .level-label{text-align:center}
-  .panel{grid-column:1/span 1;margin-left:0}
-  .panel.open{max-height:1600px}
-  .header-inner{padding:10px}
-}
-.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
-.site-footer{text-align:center;padding:24px;color:var(--muted);font-size:.95rem}
-
